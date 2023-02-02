@@ -37,11 +37,11 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 
         regex polarRegex("^P\\(\\d+,\\d+\\)$");
         if (regex_match(input, polarRegex)) {
-            string trimmedInput = input.substr(2, input.size()-1);
+            string trimmedInput = input.substr(2, input.size()-3);
 
             PolarCoordinate polar = {};
-            polar.length = stod(trimmedInput.substr(0, input.find(',')));
-            polar.angleInDegrees = stod(trimmedInput.substr(input.find('+') + 1));
+            polar.length = stod(trimmedInput.substr(0, trimmedInput.find(',')));
+            polar.angleInDegrees = stod(trimmedInput.substr(trimmedInput.find(',') + 1));
 
             ComplexNumber c;
             c.setPolarValues(polar);
