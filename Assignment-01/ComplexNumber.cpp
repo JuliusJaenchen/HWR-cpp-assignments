@@ -22,22 +22,19 @@ CartesianCoordinate Converter::polarToCartesian(PolarCoordinate polar) {
     return cartesian;
 }
 
-void ComplexNumber::setPolarValues(double polarLength, double polarAngleInDegrees) {
+void ComplexNumber::setPolarValues(PolarCoordinate polarInput) {
     PolarCoordinate pc = {};
-    double reducedAngle = fmod(polarAngleInDegrees, 360);
+    double reducedAngle = fmod(polarInput.angleInDegrees, 360);
     if (reducedAngle < 0) {
         reducedAngle = 360 - abs(reducedAngle);
     }
     pc.angleInDegrees = reducedAngle;
-    pc.length = polarLength;
+    pc.length = polarInput.length;
     this->polarCoordinate = pc;
     this->cartesianCoordinate = Converter::polarToCartesian(pc);
 }
 
-void ComplexNumber::setCartesianValues(double realPart, double imaginaryPart) {
-    CartesianCoordinate cartesian = {};
-    cartesian.realPart = realPart;
-    cartesian.imaginaryPart = imaginaryPart;
+void ComplexNumber::setCartesianValues(CartesianCoordinate cartesian) {
     this->cartesianCoordinate = cartesian;
     this->polarCoordinate = Converter::cartesianToPolar(cartesian);
 }

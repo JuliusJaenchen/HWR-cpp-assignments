@@ -22,8 +22,8 @@ private:
     PolarCoordinate polarCoordinate;
     CartesianCoordinate cartesianCoordinate;
 public:
-    void setCartesianValues(double realPart, double imaginaryPart);
-    void setPolarValues(double polarLength, double polarAngleInDegrees);
+    void setCartesianValues(CartesianCoordinate);
+    void setPolarValues(PolarCoordinate);
     CartesianCoordinate getCartesianCoordinate();
     PolarCoordinate getPolarCoordinate();
 };
