@@ -8,10 +8,13 @@ using namespace std;
 
 void UserInterface::runApplication() {
     this->currentComplexNumber = this->enterComplexNumberPrompt();
+    this->printCartesianForm();
+    this->printPolarForm();
 }
 
 ComplexNumber UserInterface::enterComplexNumberPrompt() {
     cout << "A complex number can be entered in the following formats:" << endl;
+    cout << "WARNING: only positive input values are supported at the moment." << endl;
     cout << "x+yi  (cartesian)" << endl;
     cout << "example: 2+5i" << endl;
     cout << "P(r,φ)  (polar)(φ in degrees, not radians)" << endl;
@@ -50,4 +53,22 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 
         cout << "Invalid input, try again." << endl;
     }
+}
+
+void UserInterface::printCartesianForm() {
+    cout << endl
+        << "cartesian form: "
+        << this->currentComplexNumber.getCartesianCoordinate().realPart
+        << '+'
+        << this->currentComplexNumber.getCartesianCoordinate().imaginaryPart
+        << 'i';
+}
+
+void UserInterface::printPolarForm() {
+    cout << endl
+         << "polar form: P("
+         << this->currentComplexNumber.getPolarCoordinate().length
+         << ", "
+         << this->currentComplexNumber.getPolarCoordinate().angleInDegrees
+         << ')';
 }

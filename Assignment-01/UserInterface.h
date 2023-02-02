@@ -8,6 +8,8 @@ class UserInterface {
 private:
     ComplexNumber currentComplexNumber;
     ComplexNumber enterComplexNumberPrompt();
+    void printCartesianForm();
+    void printPolarForm();
 public:
     void runApplication();
 };
