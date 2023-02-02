@@ -6,7 +6,7 @@
 int main() {
     UserInterface ui;
 
-    ui.enterComplexNumberPrompt();
+    ui.runApplication();
 
     return EXIT_SUCCESS;
 }

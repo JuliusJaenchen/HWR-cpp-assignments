@@ -6,6 +6,10 @@
 #include <regex>
 using namespace std;
 
+void UserInterface::runApplication() {
+    this->currentComplexNumber = this->enterComplexNumberPrompt();
+}
+
 ComplexNumber UserInterface::enterComplexNumberPrompt() {
     cout << "A complex number can be entered in the following formats:" << endl;
     cout << "x+yi  (cartesian)" << endl;
@@ -46,8 +50,4 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 
         cout << "Invalid input, try again." << endl;
     }
-
-    string s;
-    cin >> s;
-    cout << s;
 }

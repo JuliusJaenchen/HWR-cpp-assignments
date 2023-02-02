@@ -5,8 +5,11 @@
 #include "ComplexNumber.h"
 
 class UserInterface {
-public:
+private:
+    ComplexNumber currentComplexNumber;
     ComplexNumber enterComplexNumberPrompt();
+public:
+    void runApplication();
 };
 
 #endif //USERINTERFACE
