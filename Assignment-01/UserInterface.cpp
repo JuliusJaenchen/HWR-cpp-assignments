@@ -31,6 +31,19 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
             return c;
         }
 
+        regex polarRegex("^P\\(\\d+,\\d+\\)$");
+        if (regex_match(input, polarRegex)) {
+            string trimmedInput = input.substr(2, input.size()-1);
+
+            PolarCoordinate polar = {};
+            polar.length = stod(trimmedInput.substr(0, input.find(',')));
+            polar.angleInDegrees = stod(trimmedInput.substr(input.find('+') + 1));
+
+            ComplexNumber c;
+            c.setPolarValues(polar.length, polar.angleInDegrees);
+            return c;
+        }
+
         cout << "Invalid input, try again." << endl;
     }
 
