@@ -1,26 +1,7 @@
 #include "ComplexNumber.h"
+#include "CoordinateConverter.cpp"
 #include <cmath>
 using namespace std;
-
-PolarCoordinate Converter::cartesianToPolar(CartesianCoordinate cartesian) {
-    PolarCoordinate polar = {};
-    polar.length = sqrt((cartesian.realPart * cartesian.realPart) + (cartesian.imaginaryPart * cartesian.imaginaryPart));
-    if (polar.length == 0) {
-        polar.angleInDegrees = 0;
-        return polar;
-    }
-    double angleRadian = atan2(cartesian.imaginaryPart, cartesian.realPart);
-    polar.angleInDegrees = angleRadian * 180/M_PI;
-    return polar;
-}
-
-CartesianCoordinate Converter::polarToCartesian(PolarCoordinate polar) {
-    CartesianCoordinate cartesian = {};
-    double angleRadian = polar.angleInDegrees * M_PI/180;
-    cartesian.realPart = polar.length * cos(angleRadian);
-    cartesian.imaginaryPart = polar.length * sin(angleRadian);
-    return cartesian;
-}
 
 void ComplexNumber::setPolarValues(PolarCoordinate polarInput) {
     PolarCoordinate pc = {};
@@ -31,7 +12,7 @@ void ComplexNumber::setPolarValues(PolarCoordinate polarInput) {
     pc.angleInDegrees = reducedAngle;
     pc.length = polarInput.length;
     this->polarCoordinate = pc;
-    this->cartesianCoordinate = Converter::polarToCartesian(pc);
+    this->cartesianCoordinate = CoordinateConverter::polarToCartesian(pc);
 }
 
 void ComplexNumber::setPolarLength(double newLength) {
@@ -50,7 +31,7 @@ void ComplexNumber::setPolarAngleInDegrees(double newAngleInDegrees) {
 
 void ComplexNumber::setCartesianValues(CartesianCoordinate cartesian) {
     this->cartesianCoordinate = cartesian;
-    this->polarCoordinate = Converter::cartesianToPolar(cartesian);
+    this->polarCoordinate = CoordinateConverter::cartesianToPolar(cartesian);
 }
 
 void ComplexNumber::setCartesianRealPart(double newRealPart) {

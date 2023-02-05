@@ -2,20 +2,8 @@
 #ifndef COMPLEXNUMBER_H
 #define COMPLEXNUMBER_H
 
-struct PolarCoordinate {
-    double angleInDegrees, length;
-};
-
-struct CartesianCoordinate {
-    double realPart, imaginaryPart;
-};
-
-class Converter {
-public:
-    static PolarCoordinate cartesianToPolar(CartesianCoordinate);
-    static CartesianCoordinate polarToCartesian(PolarCoordinate);
-};
-
+#include "Coordinates.h"
+#include "CoordinateConverter.h"
 
 class ComplexNumber {
 private:
