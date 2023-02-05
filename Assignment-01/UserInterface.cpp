@@ -33,7 +33,7 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
             cartesian.imaginaryPart = stod(input.substr(input.find('+') + 1));
 
             ComplexNumber c;
-            c.setCartesianValues(cartesian);
+            c.setCartesianCoordinate(cartesian);
             return c;
         }
 
@@ -46,7 +46,7 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
             polar.angleInDegrees = stod(trimmedInput.substr(trimmedInput.find(',') + 1));
 
             ComplexNumber c;
-            c.setPolarValues(polar);
+            c.setPolarCoordinate(polar);
             return c;
         }
 
