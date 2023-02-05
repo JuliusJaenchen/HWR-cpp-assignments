@@ -1,6 +1,6 @@
 #pragma once
-#ifndef USERINTERFACE
-#define USERINTERFACE
+#ifndef USERINTERFACE_H
+#define USERINTERFACE_H
 
 #include "ComplexNumber.h"
 
@@ -14,4 +14,4 @@ public:
     void runApplication();
 };
 
-#endif //USERINTERFACE
+#endif //USERINTERFACE_H
