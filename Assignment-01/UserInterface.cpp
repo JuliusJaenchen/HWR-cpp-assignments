@@ -58,7 +58,7 @@ void UserInterface::printCartesianForm() {
     cout << endl
         << "cartesian form: "
         << this->currentComplexNumber.getCartesianCoordinate().realPart
-        << '+'
+        << " + "
         << this->currentComplexNumber.getCartesianCoordinate().imaginaryPart
         << 'i';
 }
