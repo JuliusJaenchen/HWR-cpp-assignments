@@ -25,6 +25,8 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 
         regex cartesianRegex("^\\d+\\+\\d+i$");
         if (regex_match(input, cartesianRegex)) {
+            cout << endl;
+
             input.pop_back();
 
             CartesianCoordinate cartesian = {};
@@ -38,6 +40,8 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 
         regex polarRegex("^P\\(\\d+,\\d+\\)$");
         if (regex_match(input, polarRegex)) {
+            cout << endl;
+
             string trimmedInput = input.substr(2, input.size()-3);
 
             PolarCoordinate polar = {};
@@ -54,19 +58,19 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 }
 
 void UserInterface::printCartesianForm() {
-    cout << endl
-        << "cartesian form: "
+    cout<< "cartesian form: "
         << this->currentComplexNumber.getCartesianCoordinate().realPart
         << " + "
         << this->currentComplexNumber.getCartesianCoordinate().imaginaryPart
-        << 'i';
+        << 'i'
+        << endl;
 }
 
 void UserInterface::printPolarForm() {
-    cout << endl
-         << "polar form: P("
-         << this->currentComplexNumber.getPolarCoordinate().length
-         << ", "
-         << this->currentComplexNumber.getPolarCoordinate().angleInDegrees
-         << ')';
+    cout<< "polar form: P("
+        << this->currentComplexNumber.getPolarCoordinate().length
+        << ", "
+        << this->currentComplexNumber.getPolarCoordinate().angleInDegrees
+        << ')'
+        << endl;
 }
