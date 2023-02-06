@@ -1,6 +1,12 @@
 #include "ComplexNumber.h"
+#include "CoordinateConverter.h"
 #include <cmath>
 using namespace std;
+
+ComplexNumber::ComplexNumber(CartesianCoordinate cartesian) {
+    this->cartesianCoordinate = cartesian;
+    this->polarCoordinate = CoordinateConverter::cartesianToPolar(cartesian);
+}
 
 void ComplexNumber::setPolarCoordinate(PolarCoordinate polarInput) {
     PolarCoordinate pc = {};
