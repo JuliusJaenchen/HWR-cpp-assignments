@@ -1,5 +1,4 @@
 #include "UserInterface.h"
-#include "UserInterface.cpp"
 
 #define EXIT_SUCCESS 0
 

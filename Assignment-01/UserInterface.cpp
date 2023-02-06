@@ -1,4 +1,3 @@
-#include "ComplexNumber.cpp"
 #include "UserInterface.h"
 
 #include <iostream>
