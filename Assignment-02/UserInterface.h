@@ -2,7 +2,7 @@
 #ifndef USERINTERFACE_H
 #define USERINTERFACE_H
 
-#include "ComplexNumber.h"
+#include "ComplexNumber.hpp"
 
 class UserInterface {
 private:
