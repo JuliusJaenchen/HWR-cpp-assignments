@@ -11,7 +11,9 @@
 // 2. Man kann nur einem der beiden Konstruktoren einen default parameter geben. Sonst kommt der folgende Fehler:
 //    "./UserInterface.h:7:7: error: call to constructor of 'ComplexNumber' is ambiguous"
 // 4. Hierfür benutzen wir unsere Structs CartesianCoordinate und PolarCoordinate.
-// 5.
+// 5. Lokal funktionierte die implizierte float zu double Konvertierung beim aufrufen des Constructors.
+//    Hätte es nicht funktioniert, hätte man explizit einen Constructor für einen float Wert erstellen können,
+//    der per constructor-delegation den double-constructor aufruft. Ggf. mit explizitem type-casting.
 
 
 class ComplexNumber {
