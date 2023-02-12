@@ -2,7 +2,7 @@
 #ifndef COORDINATECONVERTER_H
 #define COORDINATECONVERTER_H
 
-#include "Coordinates.h"
+#include "Coordinates.hpp"
 
 class CoordinateConverter {
 public:

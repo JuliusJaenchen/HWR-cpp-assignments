@@ -2,7 +2,7 @@
 #ifndef COMPLEXNUMBER_H
 #define COMPLEXNUMBER_H
 
-#include "Coordinates.h"
+#include "Coordinates.hpp"
 
 // 1. a) Anstatt die Werte einzelnd zu übergeben, haben wir uns entschieden einen Constructor mit dem
 //       CartesianCoordinate struct zu bauen und einen mit dem PolarCoordinate struct. So kommen sie

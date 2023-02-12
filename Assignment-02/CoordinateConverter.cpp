@@ -1,4 +1,4 @@
-#include "Coordinates.h"
+#include "Coordinates.hpp"
 #include "CoordinateConverter.h"
 #include <cmath>
 using namespace std;
