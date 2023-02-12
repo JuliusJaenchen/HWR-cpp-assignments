@@ -12,15 +12,14 @@ ComplexNumber::ComplexNumber(PolarCoordinate polar): polarCoordinate(polar) {
 }
 
 ComplexNumber::ComplexNumber(double polarLength) {
-    if (polarLength == 0) {
-        ComplexNumber(PolarCoordinate());
-    }
+    PolarCoordinate polar = {0, polarLength};
     if (polarLength < 0) {
-        ComplexNumber(PolarCoordinate({-45, polarLength}));
+       polar.angleInDegrees = -45;
     }
     if (polarLength > 0) {
-        ComplexNumber(PolarCoordinate({45, polarLength}));
+        polar.angleInDegrees = 45;
     }
+    this->setPolarCoordinate(polar);
 }
 
 void ComplexNumber::setPolarCoordinate(PolarCoordinate polarInput) {

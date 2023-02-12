@@ -33,7 +33,8 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
             cartesian.realPart = stod(input.substr(0, input.find('+')));
             cartesian.imaginaryPart = stod(input.substr(input.find('+') + 1));
 
-            ComplexNumber c(cartesian);
+            float foo = 3;
+            ComplexNumber c(foo);
             return c;
         }
 
