@@ -1,5 +1,5 @@
 #include "Coordinates.hpp"
-#include "CoordinateConverter.h"
+#include "CoordinateConverter.hpp"
 #include <cmath>
 using namespace std;
 
