@@ -3,6 +3,8 @@
 */a.out
 */.DS_Store
 */*.zip
+*/CMakeLists.txt
+*/cmake-build-debug/*
 
 .DS_Store
 .idea
