@@ -29,7 +29,10 @@ ComplexNumber UserInterface::enterComplexNumberPrompt() {
 
             input.pop_back();
 
-            CartesianCoordinate cartesian = {};
+            CartesianCoordinate cartesian = {
+                    stod(input.substr(0, input.find('+'))),
+                    stod(input.substr(input.find('+') + 1)),
+            };
             cartesian.realPart = stod(input.substr(0, input.find('+')));
             cartesian.imaginaryPart = stod(input.substr(input.find('+') + 1));
 

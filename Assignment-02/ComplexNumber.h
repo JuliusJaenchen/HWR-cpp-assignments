@@ -4,7 +4,9 @@
 
 #include "Coordinates.h"
 
-// 1. a) Wir haben uns auf CartesianCoordinate entschieden, da es leichter verstädlich ist.
+// 1. a) Anstatt die Werte einzelnd zu übergeben, haben wir uns entschieden einen Constructer mit dem
+//       CartesianCoordinate struct zu bauen und einen mit dem PolarCoordinate struct. So kommen sie
+//       sich nicht in die Quere.
 // 1. b) Der Compiler wirft einen Fehler: "no matching constructor for initialization of 'ComplexNumber'".
 // 2.
 
@@ -14,6 +16,7 @@ private:
     CartesianCoordinate cartesianCoordinate;
 public:
     ComplexNumber(CartesianCoordinate = CartesianCoordinate());
+    ComplexNumber(PolarCoordinate);
     void setCartesianCoordinate(CartesianCoordinate);
     void setCartesianRealPart(double);
     void setCartesianImaginaryPart(double);
