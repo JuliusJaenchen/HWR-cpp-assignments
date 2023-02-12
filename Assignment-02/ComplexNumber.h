@@ -4,11 +4,14 @@
 
 #include "Coordinates.h"
 
-// 1. a) Anstatt die Werte einzelnd zu übergeben, haben wir uns entschieden einen Constructer mit dem
+// 1. a) Anstatt die Werte einzelnd zu übergeben, haben wir uns entschieden einen Constructor mit dem
 //       CartesianCoordinate struct zu bauen und einen mit dem PolarCoordinate struct. So kommen sie
 //       sich nicht in die Quere.
 // 1. b) Der Compiler wirft einen Fehler: "no matching constructor for initialization of 'ComplexNumber'".
-// 2.
+// 2. Man kann nur einem der beiden Konstruktoren einen default parameter geben. Sonst kommt der folgende Fehler:
+//    "./UserInterface.h:7:7: error: call to constructor of 'ComplexNumber' is ambiguous"
+
+
 
 class ComplexNumber {
 private:
