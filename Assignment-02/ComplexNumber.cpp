@@ -3,13 +3,11 @@
 #include <cmath>
 using namespace std;
 
-ComplexNumber::ComplexNumber(CartesianCoordinate cartesian) {
-    this->cartesianCoordinate = cartesian;
+ComplexNumber::ComplexNumber(CartesianCoordinate cartesian): cartesianCoordinate(cartesian) {
     this->polarCoordinate = CoordinateConverter::cartesianToPolar(cartesian);
 }
 
-ComplexNumber::ComplexNumber(PolarCoordinate polar) {
-    this->polarCoordinate = polar;
+ComplexNumber::ComplexNumber(PolarCoordinate polar): polarCoordinate(polar) {
     this->cartesianCoordinate = CoordinateConverter::polarToCartesian(polar);
 }
 
