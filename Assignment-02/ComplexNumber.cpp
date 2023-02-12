@@ -11,6 +11,18 @@ ComplexNumber::ComplexNumber(PolarCoordinate polar): polarCoordinate(polar) {
     this->cartesianCoordinate = CoordinateConverter::polarToCartesian(polar);
 }
 
+ComplexNumber::ComplexNumber(double polarLength) {
+    if (polarLength == 0) {
+        ComplexNumber(PolarCoordinate());
+    }
+    if (polarLength < 0) {
+        ComplexNumber(PolarCoordinate({-45, polarLength}));
+    }
+    if (polarLength > 0) {
+        ComplexNumber(PolarCoordinate({45, polarLength}));
+    }
+}
+
 void ComplexNumber::setPolarCoordinate(PolarCoordinate polarInput) {
     PolarCoordinate pc = {};
     double reducedAngle = fmod(polarInput.angleInDegrees, 360);

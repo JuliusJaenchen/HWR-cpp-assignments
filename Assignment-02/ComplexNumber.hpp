@@ -10,14 +10,16 @@
 // 1. b) Der Compiler wirft einen Fehler: "no matching constructor for initialization of 'ComplexNumber'".
 // 2. Man kann nur einem der beiden Konstruktoren einen default parameter geben. Sonst kommt der folgende Fehler:
 //    "./UserInterface.h:7:7: error: call to constructor of 'ComplexNumber' is ambiguous"
-
+// 4. Hierfür benutzen wir unsere Structs CartesianCoordinate und PolarCoordinate.
+// 5.
 
 
 class ComplexNumber {
 private:
-    PolarCoordinate polarCoordinate;
-    CartesianCoordinate cartesianCoordinate;
+    PolarCoordinate polarCoordinate{};
+    CartesianCoordinate cartesianCoordinate{};
 public:
+    ComplexNumber(double polarLength);
     ComplexNumber(CartesianCoordinate = CartesianCoordinate());
     ComplexNumber(PolarCoordinate);
     void setCartesianCoordinate(CartesianCoordinate);
