@@ -1,0 +1,7 @@
+Erstellen Sie ein neues C++ Projekt mit den 3 Dateien im Ordner Matrix:
+
+- main.cpp
+- Matrix.h
+- Matrix.cpp
+
+Die Aufgaben stehen in der main.cpp!
