@@ -9,7 +9,7 @@ class Kreis: public ZeichenElement
 private:
     double m_radius;
 public:
-    Kreis(const double x, const double y, const double radius): m_radius(radius), ZeichenElement(x, y) {};
+    Kreis(const double x, const double y, const double radius);
     double area() const;
     double circumference() const;
     string toString() const;

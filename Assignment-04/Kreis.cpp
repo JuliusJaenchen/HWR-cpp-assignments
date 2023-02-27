@@ -1,7 +1,14 @@
 #include "Kreis.h"
+#include "NegativeInputExeption.h"
 #include <math.h>
 #include <sstream>
 using namespace std;
+
+Kreis::Kreis(const double x, const double y, const double radius): ZeichenElement(x, y) {
+    if (radius < 0)
+        throw new NegativeInputException();
+    this->m_radius = radius;
+};
 
 double Kreis::area() const {
     return M_PI * pow(this->m_radius, 2);

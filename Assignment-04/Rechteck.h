@@ -9,10 +9,7 @@ class Rechteck: public ZeichenElement
 private:
     double m_length, m_width;
 public:
-    Rechteck(const double x, const double y, const double length, const double width): 
-        ZeichenElement(x, y), 
-        m_length(length), 
-        m_width(width) {};
+    Rechteck(const double x, const double y, const double length, const double width);
     double area() const;
     double circumference() const;
     string toString() const;

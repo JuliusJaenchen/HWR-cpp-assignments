@@ -1,6 +1,14 @@
 #include "Rechteck.h"
+#include "NegativeInputExeption.h"
 #include <sstream>
 using namespace std;
+
+Rechteck::Rechteck(const double x, const double y, const double length, const double width): ZeichenElement(x, y) {
+    if (length < 0 || width < 0)
+        throw new NegativeInputException();
+    this->m_length = length;
+    this->m_width = width;
+}
 
 double Rechteck::area() const {
     return this->m_length * this->m_width;
