@@ -136,7 +136,7 @@ Matrix33::operator double() const {
 }
 
 double& Matrix33::get(const int row, const int column) {
-    if (row < 0 || row < 0 || column > 2 || column > 2 ) {
+    if (row < 0 || column < 0 || row > 2 || column > 2 ) {
         throw new IndexOutOfBoundsException();
     }
     return this->m_matrix[row][column];
