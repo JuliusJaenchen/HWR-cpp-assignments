@@ -1,5 +1,6 @@
 #include "Kreis.h"
 #include "Rechteck.h"
+#include "InvalidInputException.h"
 #include <iostream>
 using namespace std;
 
@@ -19,14 +20,24 @@ int main() {
             cout << "Bitte geben Sie eine X Koordinate an: "; cin >> xCoordInput;
             cout << "Bitte geben Sie eine Y Koordinate an: "; cin >> yCordInput;
             cout << "Bitte geben Sie ein Radius an: "; cin >> radiusInput;
-            elements[cursor] = new Kreis(stod(xCoordInput), stod(yCordInput), stod(radiusInput));
+            try {
+                elements[cursor] = new Kreis(stod(xCoordInput), stod(yCordInput), stod(radiusInput));
+            } catch (InvalidInputException*) {
+                cout << "Ungültige Eingabe, bitte versuchen Sie es erneuert." << endl;
+                continue;
+            }
         } else if (input == "Rechteck") {
             string xCoordInput, yCordInput, lengthInput, widthInput;
             cout << "Bitte geben Sie eine X Koordinate an: "; cin >> xCoordInput;
             cout << "Bitte geben Sie eine Y Koordinate an: "; cin >> yCordInput;
             cout << "Bitte geben Sie eine Länge an: "; cin >> lengthInput;
             cout << "Bitte geben Sie eine Breite an: "; cin >> widthInput;
-            elements[cursor] = new Rechteck(stod(xCoordInput), stod(yCordInput), stod(lengthInput), stod(widthInput));
+            try {
+                elements[cursor] = new Rechteck(stod(xCoordInput), stod(yCordInput), stod(lengthInput), stod(widthInput));
+            } catch (InvalidInputException*) {
+                cout << "Ungültige Eingabe, bitte versuchen Sie es erneuert." << endl;
+                continue;
+            }
         } else {
             cout << "Ungültige Eingabe, bitte versuchen Sie es erneuert." << endl;
             continue;
